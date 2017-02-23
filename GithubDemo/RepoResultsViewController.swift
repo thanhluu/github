@@ -49,7 +49,7 @@ class RepoResultsViewController: UIViewController {
 
             // Print the returned repositories to the output window
             for repo in newRepos {
-                print(repo)
+                // print(repo)
             }
             
                 self.repos = newRepos
@@ -59,6 +59,14 @@ class RepoResultsViewController: UIViewController {
             }, error: { (error) -> Void in
                 print(error)
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
+    @IBAction func onSave(segue: UIStoryboardSegue) {
+        print("On Save called")
     }
 }
 

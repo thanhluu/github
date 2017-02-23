@@ -33,14 +33,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2eJ-Np-ISR">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="2eJ-Np-ISR">
                                                     <rect key="frame" x="186" y="11" width="14" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="776-RX-LM0"/>
                                                         <constraint firstAttribute="width" constant="14" id="ePR-Ks-1pG"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-RA-Bqm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fork" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-RA-Bqm">
                                                     <rect key="frame" x="254" y="11" width="14" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="14" id="AqH-4L-h9q"/>
@@ -72,7 +72,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT9-sK-Mcx">
-                                                    <rect key="frame" x="76" y="58" width="86" height="20.5"/>
+                                                    <rect key="frame" x="76" y="58" width="228" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -92,8 +92,10 @@
                                                 <constraint firstItem="OO8-lO-K5I" firstAttribute="leading" secondItem="Xfg-1a-SFx" secondAttribute="leading" id="99X-1b-BTg"/>
                                                 <constraint firstItem="aT9-sK-Mcx" firstAttribute="leading" secondItem="eje-h3-ktd" secondAttribute="trailing" constant="8" id="9Fx-9J-zbt"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="aT9-sK-Mcx" secondAttribute="bottom" constant="16" id="BA3-hT-giH"/>
+                                                <constraint firstItem="2eJ-Np-ISR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xfg-1a-SFx" secondAttribute="trailing" constant="16" id="BhE-ZK-ke6"/>
                                                 <constraint firstItem="2eJ-Np-ISR" firstAttribute="centerY" secondItem="Xfg-1a-SFx" secondAttribute="centerY" id="HVd-t4-8tT"/>
                                                 <constraint firstItem="aT9-sK-Mcx" firstAttribute="top" secondItem="eje-h3-ktd" secondAttribute="top" id="Kd0-TD-lwb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="aT9-sK-Mcx" secondAttribute="trailing" constant="8" id="UXx-UA-mts"/>
                                                 <constraint firstItem="eje-h3-ktd" firstAttribute="leading" secondItem="Xfg-1a-SFx" secondAttribute="leading" id="Ve3-na-MWd"/>
                                                 <constraint firstItem="mq1-RA-Bqm" firstAttribute="leading" secondItem="UlT-Vu-F7k" secondAttribute="trailing" constant="16" id="b0Q-L8-s5D"/>
                                                 <constraint firstItem="UlT-Vu-F7k" firstAttribute="centerY" secondItem="Xfg-1a-SFx" secondAttribute="centerY" id="eYf-Zu-4Ou"/>
@@ -128,7 +130,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="x5q-EH-pP8"/>
                     <connections>
-                        <outlet property="tableView" destination="KlW-T4-bIA" id="eAW-Ha-rJE"/>
+                        <outlet property="tableView" destination="KlW-T4-bIA" id="tbi-rQ-Wbd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -154,4 +156,8 @@
             <point key="canvasLocation" x="132" y="-557"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fork" width="18" height="24"/>
+        <image name="star" width="21" height="24"/>
+    </resources>
 </document>

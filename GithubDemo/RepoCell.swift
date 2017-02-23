@@ -19,10 +19,11 @@ class RepoCell: UITableViewCell {
     @IBOutlet weak var repoNameLabel: UILabel!
     var repo: GithubRepo! {
         didSet {
+            print("setting value to RepoCell")
             repoImage.setImageWith(repo.ownerAvatarURL!)
-            repoDescLabel.text = repo.description
-            repoFolkLabel.text = String(describing: repo.forks)
-            repoStarLabel.text = String(describing: repo.stars)
+            repoDescLabel.text = repo.repoDescription
+            repoFolkLabel.text = String("\(repo.forks!)")
+            repoStarLabel.text = String("\(repo.stars!)")
             repoAuthoLabel.text = repo.ownerHandle
             repoNameLabel.text = repo.name
         }

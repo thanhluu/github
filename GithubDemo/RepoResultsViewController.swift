@@ -12,6 +12,7 @@ import MBProgressHUD
 // Main ViewController
 class RepoResultsViewController: UIViewController {
 
+    
     @IBOutlet weak var tableView: UITableView!
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
@@ -49,8 +50,11 @@ class RepoResultsViewController: UIViewController {
             // Print the returned repositories to the output window
             for repo in newRepos {
                 print(repo)
-            }   
-            self.tableView.reloadData()
+            }
+            
+                self.repos = newRepos
+                self.tableView.reloadData()
+
             MBProgressHUD.hide(for: self.view, animated: true)
             }, error: { (error) -> Void in
                 print(error)
@@ -59,7 +63,7 @@ class RepoResultsViewController: UIViewController {
 }
 
 // SearchBar methods
-extension RepoResultsViewController: UISearchBarDelegate {
+extension RepoResultsViewController: UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
 
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         searchBar.setShowsCancelButton(true, animated: true)
@@ -81,9 +85,7 @@ extension RepoResultsViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         doSearch()
     }
-}
-
-extension RepoResultsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if repos == nil {
             return 0
@@ -93,6 +95,7 @@ extension RepoResultsViewController: UITableViewDelegate, UITableViewDataSource 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "repoCell") as! RepoCell
+        print("setting value for index \(indexPath.row)")
         cell.repo = repos[indexPath.row]
         return cell
     }

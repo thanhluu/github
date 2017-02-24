@@ -22,8 +22,8 @@ class RepoCell: UITableViewCell {
             print("setting value to RepoCell")
             repoImage.setImageWith(repo.ownerAvatarURL!)
             repoDescLabel.text = repo.repoDescription
-            repoFolkLabel.text = String("\(repo.forks!)")
-            repoStarLabel.text = String("\(repo.stars!)")
+            repoFolkLabel.text = String(repo.forks!)
+            repoStarLabel.text = String(repo.stars!)
             repoAuthoLabel.text = repo.ownerHandle
             repoNameLabel.text = repo.name
         }

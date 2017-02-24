@@ -19,6 +19,7 @@ class RepoResultsViewController: UIViewController {
 
     var repos: [GithubRepo]!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,7 +86,12 @@ extension RepoResultsViewController: UISearchBarDelegate, UITableViewDelegate, U
         searchBar.resignFirstResponder()
         doSearch()
     }
-    
+    @IBAction func onSave(segue: UIStoryboardSegue){
+        let settingsController = segue.source as! SettingsController
+        searchSettings.minStars = settingsController.newStarValue
+        doSearch()
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if repos == nil {
             return 0
